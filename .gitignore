@@ -1,3 +1,4 @@
-# api
+# .gitignore
 spotify_config.py
+.env
 

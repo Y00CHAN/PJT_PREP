@@ -1,6 +1,6 @@
 import requests
 from pprint import pprint
-from config.spotify_config import getHeaders
+from config.spotify_config import getHeaders, API_CLIENT_ID, API_CLIENT_SECRET
 
 
 
