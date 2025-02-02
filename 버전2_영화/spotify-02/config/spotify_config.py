@@ -7,8 +7,8 @@ import base64
 
 # 📌 여기에 발급받은 API_CLIENT_ID와 API_CLIENT_SECRET을 작성하세요. 📌
 API_URL = "https://api.spotify.com/v1"
-API_CLIENT_ID = ""
-API_CLIENT_SECRET = ""
+API_CLIENT_ID = "457edfd913a94e8ba9eea58ec1b17209"
+API_CLIENT_SECRET = "e506e4aab2774a1a9f66957a24f7a163"
 
 # 아래 코드는 수정하지 않습니다.
 encoded = base64.b64encode(

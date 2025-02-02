@@ -12,29 +12,28 @@ for artist in json_files:
     with open(artist, encoding='utf-8') as file:
         artists_dict[artist.name] = json.load(file)
 
-# a= (','.join(map(str, artists_dict.values())))
-print(artists_dict)
+
+def max_popularity(artists):
+    max_pop = float('-inf')
+    max_pop_artist = ''
+    
+    for artist in artists_dict.values():
+        if 'popularity' in artist and 'name' in artist:
+            if artist['popularity'] > max_pop:
+                max_pop = artist['popularity']
+                max_pop_artist = artist['name']
+
+    return max_pop_artist
 
 
-# def max_popularity(artists):
-#     global artists_dict
-#     pop_list = []
-#     for artist in artists_dict:
-#         pop_list.append(artists_dict['popularity'])
-#         return pop_list
+# 아래의 코드는 수정하지 않습니다.
+if __name__ == '__main__':
+    from pathlib import Path
 
-# max_popularity(artist)
+    current_dir = Path(__file__).resolve().parent
 
-# # 아래의 코드는 수정하지 않습니다.
-# if __name__ == '__main__':
-#     from pathlib import Path
+    artist_json = open(current_dir / 'data' / 'artists.json', encoding='utf-8')
+    artists_list = json.load(artist_json)
 
-#     current_dir = Path(__file__).resolve().parent
+    print(max_popularity(artists_list))
 
-#     artist_json = open(current_dir / 'data' / 'artists.json', encoding='utf-8')
-#     artists_list = json.load(artist_json)
-
-#     print(max_popularity(artists_list))
-
-# a = [3, 434, 132, 4]
-# print(max(a))

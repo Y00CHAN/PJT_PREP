@@ -4,10 +4,22 @@ from config.spotify_config import getHeaders
 
 
 def get_artists_top_tracks(name):
-    # 여기에 코드를 작성합니다.
     URL = 'https://api.spotify.com/v1'
     headers = getHeaders()
-    pass
+    params = {
+        'q' : 'k-pop',
+        'type' : 'artist',
+        'market' : 'KR',
+        'limit' : 20,
+    }
+    response = requests.get(f'{URL}/search', headers=headers, params=params)
+    response = response.json()
+    result = response.get('artists').get('items')
+    names = [artist['name'] for artist in result if 'name' in artist]
+    # pop_artists_lsit = [artist['name'] for artist in result if 'name' in artist if artist['popularity'] >= 80]
+
+    return names 
+
 
 
 # 아래 코드는 수정하지 않습니다.
