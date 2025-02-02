@@ -3,6 +3,7 @@ from pprint import pprint
 from config.spotify_config import getHeaders
 
 
+
 def get_artists():
     # 여기에 코드를 작성합니다.
     URL = 'https://api.spotify.com/v1'
